@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Artigo extends Artefato{
 
-	String nomeEvento;
-	Date dataDePublicacao;
+	private String nomeEvento;
+	private Date dataDePublicacao;
 	
 }
