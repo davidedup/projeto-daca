@@ -1,13 +1,15 @@
-package service;
+package br.com.ufcg.bibliotecaccc.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import model.Autor;
-import repositories.AutorRepository;
+import br.com.ufcg.bibliotecaccc.model.Autor;
+import br.com.ufcg.bibliotecaccc.repositories.AutorRepository;
 
+@Service("autoService")
 public class AutorServiceImpl implements AutorService{
 
 	

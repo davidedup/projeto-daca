@@ -1,4 +1,4 @@
-package model;
+package br.com.ufcg.bibliotecaccc.model;
 
 public class Tese {
 	

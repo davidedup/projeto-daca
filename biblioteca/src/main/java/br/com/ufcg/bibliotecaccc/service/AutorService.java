@@ -1,7 +1,7 @@
-package service;
+package br.com.ufcg.bibliotecaccc.service;
 import java.util.List;
 
-import model.Autor;
+import br.com.ufcg.bibliotecaccc.model.Autor;
 
 public interface AutorService {
 	

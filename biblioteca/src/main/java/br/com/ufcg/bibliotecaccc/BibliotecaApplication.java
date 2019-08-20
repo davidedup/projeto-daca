@@ -1,4 +1,4 @@
-package br.com.bibliotecaccc.biblioteca;
+package br.com.ufcg.bibliotecaccc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
