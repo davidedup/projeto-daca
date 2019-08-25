@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import br.com.ufcg.bibliotecaccc.model.Autor;
 import br.com.ufcg.bibliotecaccc.repositories.AutorRepository;
 
-@Service("autoService")
+@Service("autorService")
 public class AutorServiceImpl implements AutorService{
 
 	
@@ -19,9 +19,9 @@ public class AutorServiceImpl implements AutorService{
 	@Override
 	public List<Autor> findAllAutores() {
 		Iterable<Autor> autores = this.autorRepository.findAll();
-		List<Autor> produtosList = toList(autores);
+		List<Autor> autoresList = toList(autores);
 		
-		return produtosList;
+		return autoresList;
 	}
 	
 	
@@ -34,6 +34,18 @@ public class AutorServiceImpl implements AutorService{
 		}
 
 		return list;
+	}
+
+
+	@Override
+	public Autor cadastraAutor(Autor autor) {
+		this.autorRepository.save(autor);
+		return autor;
+	}
+
+
+	public Autor findById(long id) {
+		return this.autorRepository.getAutorById(id);
 	}
 
 }
