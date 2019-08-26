@@ -33,4 +33,12 @@ public class ArtefatoServiceImpl implements ArtefatoService {
 
 		return list;
 	}
+
+	@Override
+	public void cadastraArtefato(Artefato artefato) {
+		this.artefatoRepository.save(artefato);
+		
+	}
+	
+	
 }

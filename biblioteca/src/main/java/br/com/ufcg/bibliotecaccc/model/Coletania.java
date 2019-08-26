@@ -22,7 +22,6 @@ public class Coletania {
 	@Column(name = "descricao")
 	private String descricao;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "publicador")
 	@Column(name = "artigos")
 	private Set<Artefato> artigos;
 	

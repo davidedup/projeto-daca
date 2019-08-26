@@ -8,4 +8,6 @@ public interface ArtefatoService {
 
 	public List<Artefato> findAllArtefatos();
 
+	public void cadastraArtefato(Artefato artefato);
+
 }
