@@ -24,7 +24,6 @@ public class AutorServiceImpl implements AutorService{
 		return autoresList;
 	}
 	
-	
 	//colocar em classe util
 	public static <T> List<T> toList(Iterable<T> iterable) {
 		ArrayList<T> list = new ArrayList<T>();
@@ -35,7 +34,6 @@ public class AutorServiceImpl implements AutorService{
 
 		return list;
 	}
-
 
 	@Override
 	public Autor cadastraAutor(Autor autor) {

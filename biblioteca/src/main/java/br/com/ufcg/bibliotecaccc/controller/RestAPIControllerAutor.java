@@ -36,9 +36,9 @@ public class RestAPIControllerAutor {
 	public ResponseEntity<?> casdastraAutor(@RequestBody Autor autor) {
 		this.autorService.cadastraAutor(autor);
 
-		Autor autorAux = new Autor();
-		autorAux.setEmail(autor.getEmail());
-		autorAux.setNome(autor.getNome());		
+//		Autor autorAux = new Autor();
+//		autorAux.setEmail(autor.getEmail());
+//		autorAux.setNome(autor.getNome());		
 		return new ResponseEntity<>(autor, HttpStatus.CREATED);
 	}
 	

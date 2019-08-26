@@ -19,13 +19,14 @@ public class Artefato {
 	@Column(name = "id")
 	private long id;
 	
-//	@OneToMany
-//	@Column(name = "autores")
-//	private Set<Autor> autores;
+	@OneToMany
+	@Column(name = "autores")
+	private Set<Autor> autores;
 	
 	@Column(name = "titulo")
 	private String titulo;
 	
+	//TODO: trocar por Set de strings
 	@Column(name = "palavras")
 	private String palavrasChaves;
 	
@@ -37,19 +38,19 @@ public class Artefato {
 	}
 	
 	public Artefato(Set<Autor> autores, String titulo, String palavrasChaves, String data) {
-		//this.autores = autores;
+		this.autores = autores;
 		this.titulo = titulo;
 		this.palavrasChaves = palavrasChaves;
 		this.data = data;
 	}
 
-//	public Set<Autor> getAutores() {
-//		return autores;
-//	}
+	public Set<Autor> getAutores() {
+		return autores;
+	}
 
-//	public void setAutores(Set<Autor> autores) {
-//		this.autores = autores;
-//	}
+	public void setAutores(Set<Autor> autores) {
+		this.autores = autores;
+	}
 
 	public String getTitulo() {
 		return titulo;

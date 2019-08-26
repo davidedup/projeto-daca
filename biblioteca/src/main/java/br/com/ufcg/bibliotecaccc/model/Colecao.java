@@ -3,13 +3,18 @@ package br.com.ufcg.bibliotecaccc.model;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.CascadeType;
 
-public class Coletania {
+@Entity
+@Table(name = "tb_colecao")
+public class Colecao {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,17 +27,19 @@ public class Coletania {
 	@Column(name = "descricao")
 	private String descricao;
 	
+	@OneToMany
 	@Column(name = "artigos")
 	private Set<Artefato> artigos;
 	
+	//TODO: ta dando erro !! como mapear ??
 	@Column(name = "autor")
-	private Autor autor;
+	private String autor;
 	
-	public Coletania() {
-		super();
+	public Colecao() {
+		
 	}
 
-	public Coletania(String nome, String descricao, Set<Artefato> artigos, Autor autor) {
+	public Colecao(String nome, String descricao, Set<Artefato> artigos, String autor) {
 		super();
 		this.nome = nome;
 		this.descricao = descricao;
@@ -58,10 +65,10 @@ public class Coletania {
 	public void setArtigos(Set<Artefato> artigos) {
 		this.artigos = artigos;
 	}
-	public Autor getAutor() {
-		return autor;
-	}
-	public void setAutor(Autor autor) {
-		this.autor = autor;
-	}	
+//	public Autor getAutor() {
+//		return autor;
+//	}
+//	public void setAutor(Autor autor) {
+//		this.autor = autor;
+//	}	
 }
