@@ -9,12 +9,15 @@ import org.springframework.stereotype.Service;
 import br.com.ufcg.bibliotecaccc.model.Artefato;
 import br.com.ufcg.bibliotecaccc.model.Autor;
 import br.com.ufcg.bibliotecaccc.repositories.ArtefatoRepository;
+import br.com.ufcg.bibliotecaccc.repositories.AutorRepository;
 
 @Service("artefatoService")
 public class ArtefatoServiceImpl implements ArtefatoService {
 
 	@Autowired
 	private ArtefatoRepository artefatoRepository;
+	@Autowired
+	private AutorRepository autorRepository;
 
 	@Override
 	public List<Artefato> findAllArtefatos() {
@@ -35,10 +38,12 @@ public class ArtefatoServiceImpl implements ArtefatoService {
 	}
 
 	@Override
-	public void cadastraArtefato(Artefato artefato) {
-		this.artefatoRepository.save(artefato);
+	public void cadastraArtefato(Artefato artefato, ArrayList idsDosAutores) {
+		// TODO Auto-generated method stub
 		
 	}
+
+	
 	
 	
 }

@@ -14,6 +14,8 @@ import javax.persistence.Table;
 @Table(name = "tb_artefato")
 public class Artefato {
 	
+	
+	// TODO: não ta voltando o ID na requisição !
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
@@ -30,6 +32,7 @@ public class Artefato {
 	@Column(name = "palavras")
 	private String palavrasChaves;
 	
+	// TODO: deixa data em string e faz um parser ?
 	@Column(name = "data")
 	private String data;
 
@@ -75,6 +78,5 @@ public class Artefato {
 	public void setData(String data) {
 		this.data = data;
 	}
-	
 		
 }
