@@ -9,6 +9,6 @@ public interface ArtefatoService {
 
 	public List<Artefato> findAllArtefatos();
 
-	public void cadastraArtefato(Artefato artefato, ArrayList idsDosAutores);
+	public void cadastraArtefato(Artefato artefato);
 
 }

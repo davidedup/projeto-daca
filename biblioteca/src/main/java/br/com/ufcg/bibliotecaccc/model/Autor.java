@@ -23,7 +23,6 @@ public class Autor {
 	private String email;
 	
 	//TODO: Recuperar os trabalhos de um autor ? recupera todos os trabalhos e procura o autor especificado ?
-
 	//TODO: Login ? 
 	
 	public Autor(String nome, String email) {

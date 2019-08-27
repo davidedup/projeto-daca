@@ -32,22 +32,23 @@ public class RestAPIControllerArtefato {
 		return new ResponseEntity<List<Artefato>>(artefatos, HttpStatus.OK);
 	}
 
-	//TODO: manda o autor na requisição ou pega ele do BD ?
 	@RequestMapping(method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE }, produces = {
-			MediaType.APPLICATION_JSON_VALUE })
+	MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<?> casdastraArtefato(@RequestBody Artefato artefato) {
-		System.out.println("Cadastra artefato");
-		
-		ArrayList idsDosAutores = new ArrayList();
-		Set<Autor> set =  artefato.getAutores();
-		for (Iterator<Autor> it = set.iterator(); it.hasNext(); ) {
-	        Autor a = it.next();
-	        idsDosAutores.add(a.getId());
-	        System.out.println(a.getId());
-	    }
-		
-		this.artefatoService.cadastraArtefato(artefato, idsDosAutores);
+		this.artefatoService.cadastraArtefato(artefato);
 		return new ResponseEntity<>(artefato, HttpStatus.CREATED);
 	}
+
+	//System.out.println("Cadastra artefato");
+	//
+	//ArrayList idsDosAutores = new ArrayList();
+	//Set<Autor> set =  artefato.getAutores();
+	//for (Iterator<Autor> it = set.iterator(); it.hasNext(); ) {
+	//Autor a = it.next();
+	//idsDosAutores.add(a.getId());
+	//System.out.println(a.getId());
+	//}
+	//
+	
 	
 }

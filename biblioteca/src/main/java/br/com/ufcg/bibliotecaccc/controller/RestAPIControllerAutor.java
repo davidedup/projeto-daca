@@ -34,11 +34,7 @@ public class RestAPIControllerAutor {
 	{MediaType.APPLICATION_JSON_VALUE} , produces = 
 	{MediaType.APPLICATION_JSON_VALUE} )
 	public ResponseEntity<?> casdastraAutor(@RequestBody Autor autor) {
-		this.autorService.cadastraAutor(autor);
-
-//		Autor autorAux = new Autor();
-//		autorAux.setEmail(autor.getEmail());
-//		autorAux.setNome(autor.getNome());		
+		this.autorService.cadastraAutor(autor);	
 		return new ResponseEntity<>(autor, HttpStatus.CREATED);
 	}
 	
@@ -47,5 +43,10 @@ public class RestAPIControllerAutor {
 		Autor autor = this.autorService.findById(id);
 		return new ResponseEntity<Autor>(autor, HttpStatus.OK);	
 	}
+	
+	
+	//	Autor autorAux = new Autor();
+	//	autorAux.setEmail(autor.getEmail());
+	//	autorAux.setNome(autor.getNome());	
 	
 }

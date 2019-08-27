@@ -2,11 +2,14 @@ package br.com.ufcg.bibliotecaccc.model;
 
 import java.util.Set;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -14,8 +17,6 @@ import javax.persistence.Table;
 @Table(name = "tb_artefato")
 public class Artefato {
 	
-	
-	// TODO: não ta voltando o ID na requisição !
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
@@ -29,10 +30,12 @@ public class Artefato {
 	private String titulo;
 	
 	//TODO: trocar por Set de strings
-	@Column(name = "palavras")
-	private String palavrasChaves;
 	
-	// TODO: deixa data em string e faz um parser ?
+	@ElementCollection
+	@CollectionTable(name="palavras", joinColumns=@JoinColumn(name="id"))
+	@Column(name = "palavras")
+	private Set<String> palavrasChaves;
+	
 	@Column(name = "data")
 	private String data;
 
@@ -40,7 +43,7 @@ public class Artefato {
 		
 	}
 	
-	public Artefato(Set<Autor> autores, String titulo, String palavrasChaves, String data) {
+	public Artefato(Set<Autor> autores, String titulo, Set<String> palavrasChaves, String data) {
 		this.autores = autores;
 		this.titulo = titulo;
 		this.palavrasChaves = palavrasChaves;
@@ -63,11 +66,11 @@ public class Artefato {
 		this.titulo = titulo;
 	}
 
-	public String getPalavrasChaves() {
+	public Set<String> getPalavrasChaves() {
 		return palavrasChaves;
 	}
 
-	public void setPalavrasChaves(String palavrasChaves) {
+	public void setPalavrasChaves(Set<String> palavrasChaves) {
 		this.palavrasChaves = palavrasChaves;
 	}
 

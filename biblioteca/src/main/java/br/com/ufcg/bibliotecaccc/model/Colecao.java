@@ -7,10 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.CascadeType;
 
 @Entity
 @Table(name = "tb_colecao")
@@ -31,15 +30,14 @@ public class Colecao {
 	@Column(name = "artigos")
 	private Set<Artefato> artigos;
 	
-	//TODO: ta dando erro !! como mapear ??
-	@Column(name = "autor")
-	private String autor;
+	@ManyToOne
+	private Autor autor;
 	
 	public Colecao() {
 		
 	}
 
-	public Colecao(String nome, String descricao, Set<Artefato> artigos, String autor) {
+	public Colecao(String nome, String descricao, Set<Artefato> artigos, Autor autor) {
 		super();
 		this.nome = nome;
 		this.descricao = descricao;

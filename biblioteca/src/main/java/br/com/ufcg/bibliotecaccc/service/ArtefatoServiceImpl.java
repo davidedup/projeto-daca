@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.ufcg.bibliotecaccc.model.Artefato;
-import br.com.ufcg.bibliotecaccc.model.Autor;
 import br.com.ufcg.bibliotecaccc.repositories.ArtefatoRepository;
 import br.com.ufcg.bibliotecaccc.repositories.AutorRepository;
 
@@ -16,9 +15,6 @@ public class ArtefatoServiceImpl implements ArtefatoService {
 
 	@Autowired
 	private ArtefatoRepository artefatoRepository;
-	@Autowired
-	private AutorRepository autorRepository;
-
 	@Override
 	public List<Artefato> findAllArtefatos() {
 		Iterable<Artefato> artefatos = this.artefatoRepository.findAll();
@@ -26,6 +22,11 @@ public class ArtefatoServiceImpl implements ArtefatoService {
 		return artefatosList;
 	}
 
+	@Override
+	public void cadastraArtefato(Artefato artefato) {
+		this.artefatoRepository.save(artefato);
+	}	
+	
 	// colocar em classe util
 	public static <T> List<T> toList(Iterable<T> iterable) {
 		ArrayList<T> list = new ArrayList<T>();
@@ -36,14 +37,4 @@ public class ArtefatoServiceImpl implements ArtefatoService {
 
 		return list;
 	}
-
-	@Override
-	public void cadastraArtefato(Artefato artefato, ArrayList idsDosAutores) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-	
-	
 }
