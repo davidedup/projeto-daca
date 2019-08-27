@@ -38,17 +38,4 @@ public class RestAPIControllerArtefato {
 		this.artefatoService.cadastraArtefato(artefato);
 		return new ResponseEntity<>(artefato, HttpStatus.CREATED);
 	}
-
-	//System.out.println("Cadastra artefato");
-	//
-	//ArrayList idsDosAutores = new ArrayList();
-	//Set<Autor> set =  artefato.getAutores();
-	//for (Iterator<Autor> it = set.iterator(); it.hasNext(); ) {
-	//Autor a = it.next();
-	//idsDosAutores.add(a.getId());
-	//System.out.println(a.getId());
-	//}
-	//
-	
-	
 }

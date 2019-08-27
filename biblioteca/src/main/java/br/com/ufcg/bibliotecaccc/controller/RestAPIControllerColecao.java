@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.ufcg.bibliotecaccc.model.Autor;
 import br.com.ufcg.bibliotecaccc.model.Colecao;
 import br.com.ufcg.bibliotecaccc.service.ColecaoService;
 import br.com.ufcg.bibliotecaccc.service.ColecaoServiceImpl;

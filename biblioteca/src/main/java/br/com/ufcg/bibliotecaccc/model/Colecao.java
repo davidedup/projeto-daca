@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -26,9 +27,9 @@ public class Colecao {
 	@Column(name = "descricao")
 	private String descricao;
 	
-	@OneToMany
-	@Column(name = "artigos")
-	private Set<Artefato> artigos;
+	@ManyToMany
+	@Column(name = "artefatos")
+	private Set<Artefato> artefatos;
 	
 	@ManyToOne
 	private Autor autor;
@@ -37,11 +38,11 @@ public class Colecao {
 		
 	}
 
-	public Colecao(String nome, String descricao, Set<Artefato> artigos, Autor autor) {
+	public Colecao(String nome, String descricao, Set<Artefato> artfeatos, Autor autor) {
 		super();
 		this.nome = nome;
 		this.descricao = descricao;
-		this.artigos = artigos;
+		this.artefatos = artefatos;
 		this.autor = autor;
 	}
 	
@@ -58,15 +59,15 @@ public class Colecao {
 		this.descricao = descricao;
 	}
 	public Set<Artefato> getArtigos() {
-		return artigos;
+		return artefatos;
 	}
-	public void setArtigos(Set<Artefato> artigos) {
-		this.artigos = artigos;
+	public void setArtigos(Set<Artefato> artefatos) {
+		this.artefatos = artefatos;
 	}
-//	public Autor getAutor() {
-//		return autor;
-//	}
-//	public void setAutor(Autor autor) {
-//		this.autor = autor;
-//	}	
+	public Autor getAutor() {
+		return autor;
+	}
+	public void setAutor(Autor autor) {
+		this.autor = autor;
+	}	
 }

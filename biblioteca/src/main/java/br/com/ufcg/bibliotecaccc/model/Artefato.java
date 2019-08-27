@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -22,14 +23,12 @@ public class Artefato {
 	@Column(name = "id")
 	private long id;
 	
-	@OneToMany
+	@ManyToMany
 	@Column(name = "autores")
 	private Set<Autor> autores;
 	
 	@Column(name = "titulo")
 	private String titulo;
-	
-	//TODO: trocar por Set de strings
 	
 	@ElementCollection
 	@CollectionTable(name="palavras", joinColumns=@JoinColumn(name="id"))
