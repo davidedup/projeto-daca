@@ -6,4 +6,6 @@ import br.com.ufcg.bibliotecaccc.model.Colecao;
 
 public interface ColecaoRepository extends CrudRepository<Colecao, Long>{
 
+	Colecao getColecaoById(long id);
+
 }

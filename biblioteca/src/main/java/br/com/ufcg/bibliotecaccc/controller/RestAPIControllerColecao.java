@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.ufcg.bibliotecaccc.model.Artefato;
+import br.com.ufcg.bibliotecaccc.model.Autor;
 import br.com.ufcg.bibliotecaccc.model.Colecao;
 import br.com.ufcg.bibliotecaccc.service.ColecaoService;
 import br.com.ufcg.bibliotecaccc.service.ColecaoServiceImpl;
@@ -37,5 +40,20 @@ public class RestAPIControllerColecao {
 		return new ResponseEntity<>(colecao, HttpStatus.CREATED);
 	}
 	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ResponseEntity<?> listaColecoesDeAutorById(@PathVariable("id") long id) {
+		List<Colecao> colecoesDoAutor = this.colecaoService.colecoesDeUmAutorPorId(id);
+		return new ResponseEntity<List<Colecao>>(colecoesDoAutor, HttpStatus.OK);	
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.POST, consumes = 
+	{MediaType.APPLICATION_JSON_VALUE}, produces = 
+	{MediaType.APPLICATION_JSON_VALUE})
+	public ResponseEntity<?> adicionaArtefatoEmColecao(@PathVariable("id") long id,	@RequestBody Artefato artefato ) {
+		Colecao colecao =  this.colecaoService.adicionaArtefatoEmColecao(id, artefato);
+		return new ResponseEntity<Colecao>(colecao, HttpStatus.OK);	
+	}
+	
+
 	
 }

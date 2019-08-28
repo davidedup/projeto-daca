@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.ufcg.bibliotecaccc.model.Artefato;
 import br.com.ufcg.bibliotecaccc.model.Autor;
 import br.com.ufcg.bibliotecaccc.service.AutorService;
 import br.com.ufcg.bibliotecaccc.service.AutorServiceImpl;
@@ -43,4 +44,5 @@ public class RestAPIControllerAutor {
 		Autor autor = this.autorService.findById(id);
 		return new ResponseEntity<Autor>(autor, HttpStatus.OK);	
 	}
+	
 }
