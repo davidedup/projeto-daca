@@ -75,5 +75,12 @@ public class Colecao {
 	}
 	public void setAutor(Autor autor) {
 		this.autor = autor;
+	}
+
+	@Override
+	public String toString() {
+		return this.getNome() + "/n Criado por: " + this.getAutor().getNome() + "/n Trablahos: " + this.getArtefatos().toString();
 	}	
+	
+	
 }

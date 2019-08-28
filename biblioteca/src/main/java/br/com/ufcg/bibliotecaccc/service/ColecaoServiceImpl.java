@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.ufcg.bibliotecaccc.model.Artefato;
 import br.com.ufcg.bibliotecaccc.model.Colecao;
+import br.com.ufcg.bibliotecaccc.model.ColecaoResumida;
 import br.com.ufcg.bibliotecaccc.repositories.ColecaoRepository;
 
 @Service("colecaoService")
@@ -64,5 +65,19 @@ public class ColecaoServiceImpl implements ColecaoService {
 		this.colecaoRepository.save(colecao);
 		return colecao;
 	}
+
+	@Override
+	public ColecaoResumida colecaoResumida(long id) {
+		Colecao colecao = this.colecaoRepository.getColecaoById(id);
+		return new ColecaoResumida(colecao);
+	}
+
+	@Override
+	public int totalDeArtefatos(long id) {
+		return this.colecaoRepository.getColecaoById(id).getArtefatos().size();
+	}
+	
+	
+	
 
 }

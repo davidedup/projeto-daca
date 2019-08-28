@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.ufcg.bibliotecaccc.model.Artefato;
 import br.com.ufcg.bibliotecaccc.model.Autor;
 import br.com.ufcg.bibliotecaccc.model.Colecao;
+import br.com.ufcg.bibliotecaccc.model.ColecaoResumida;
 import br.com.ufcg.bibliotecaccc.service.ColecaoService;
 import br.com.ufcg.bibliotecaccc.service.ColecaoServiceImpl;
 
@@ -54,6 +55,19 @@ public class RestAPIControllerColecao {
 		return new ResponseEntity<Colecao>(colecao, HttpStatus.OK);	
 	}
 	
-
+	@RequestMapping(value = "total/{id}", method = RequestMethod.GET, consumes = 
+		{MediaType.APPLICATION_JSON_VALUE}, produces = 
+		{MediaType.APPLICATION_JSON_VALUE})
+		public ResponseEntity<?> informacoesDeUmaColecao(@PathVariable("id") long id) {
+		int a =  this.colecaoService.totalDeArtefatos(id);
+		return new ResponseEntity<>(a, HttpStatus.OK);	
+		
+//			ColecaoResumida colecao = this.colecaoService.colecaoResumida(id);
+//			
+//			System.out.println(colecao.toString());
+//			
+//			return new ResponseEntity<ColecaoResumida>(colecao, HttpStatus.OK);	
+		}
+		
 	
 }
