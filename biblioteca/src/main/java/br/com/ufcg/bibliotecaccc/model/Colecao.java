@@ -2,14 +2,16 @@ package br.com.ufcg.bibliotecaccc.model;
 
 import java.util.Set;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -27,18 +29,17 @@ public class Colecao {
 	@Column(name = "descricao")
 	private String descricao;
 	
-	@ManyToMany
-	@Column(name = "artefatos")
-	private Set<Artefato> artefatos;
-	
 	@ManyToOne
 	private Autor autor;
+	
+	@ManyToMany
+	private Set<Artefato> artefatos;
 	
 	public Colecao() {
 		
 	}
 
-	public Colecao(String nome, String descricao, Set<Artefato> artfeatos, Autor autor) {
+	public Colecao(String nome, String descricao, Set<Artefato> artefatos, Autor autor) {
 		super();
 		this.nome = nome;
 		this.descricao = descricao;
@@ -46,6 +47,14 @@ public class Colecao {
 		this.autor = autor;
 	}
 	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -58,10 +67,10 @@ public class Colecao {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Set<Artefato> getArtigos() {
+	public Set<Artefato> getArtefatos() {
 		return artefatos;
 	}
-	public void setArtigos(Set<Artefato> artefatos) {
+	public void setArtefatos(Set<Artefato> artefatos) {
 		this.artefatos = artefatos;
 	}
 	public Autor getAutor() {

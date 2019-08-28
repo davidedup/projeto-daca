@@ -37,8 +37,8 @@ public class AutorServiceImpl implements AutorService{
 
 	@Override
 	public Autor cadastraAutor(Autor autor) {
-		this.autorRepository.save(autor);
-		return autor;
+		return this.autorRepository.save(autor);
+		
 	}
 
 

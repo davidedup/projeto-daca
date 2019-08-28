@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import br.com.ufcg.bibliotecaccc.model.Artefato;
 import br.com.ufcg.bibliotecaccc.repositories.ArtefatoRepository;
-import br.com.ufcg.bibliotecaccc.repositories.AutorRepository;
 
 @Service("artefatoService")
 public class ArtefatoServiceImpl implements ArtefatoService {
@@ -23,8 +22,8 @@ public class ArtefatoServiceImpl implements ArtefatoService {
 	}
 
 	@Override
-	public void cadastraArtefato(Artefato artefato) {
-		this.artefatoRepository.save(artefato);
+	public Artefato cadastraArtefato(Artefato artefato) {
+		return this.artefatoRepository.save(artefato);
 	}	
 	
 	// colocar em classe util
@@ -36,5 +35,10 @@ public class ArtefatoServiceImpl implements ArtefatoService {
 		}
 
 		return list;
+	}
+
+	@Override
+	public Artefato findById(long id) {
+		return this.artefatoRepository.getArtefatoById(id);
 	}
 }

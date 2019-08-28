@@ -22,9 +22,6 @@ public class Autor {
 	@Column(name = "email")
 	private String email;
 	
-	//TODO: Recuperar os trabalhos de um autor ? recupera todos os trabalhos e procura o autor especificado ?
-	//TODO: Login ? 
-	
 	public Autor(String nome, String email) {
 		this.nome = nome;
 		this.email = email;
@@ -57,7 +54,5 @@ public class Autor {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 		
 }

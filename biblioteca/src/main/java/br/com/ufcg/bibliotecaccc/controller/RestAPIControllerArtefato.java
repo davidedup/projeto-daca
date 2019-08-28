@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,10 +33,20 @@ public class RestAPIControllerArtefato {
 		return new ResponseEntity<List<Artefato>>(artefatos, HttpStatus.OK);
 	}
 
-	@RequestMapping(method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE }, produces = {
+	@RequestMapping(method = RequestMethod.POST, consumes = 
+	{ MediaType.APPLICATION_JSON_VALUE }, produces = {
 	MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<?> casdastraArtefato(@RequestBody Artefato artefato) {
-		this.artefatoService.cadastraArtefato(artefato);
+		artefato = this.artefatoService.cadastraArtefato(artefato);
 		return new ResponseEntity<>(artefato, HttpStatus.CREATED);
 	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ResponseEntity<?> consultaAtefato(@PathVariable("id") long id) {
+		Artefato artefato = this.artefatoService.findById(id);
+		return new ResponseEntity<Artefato>(artefato, HttpStatus.OK);	
+	}
+
+	
+	
 }
