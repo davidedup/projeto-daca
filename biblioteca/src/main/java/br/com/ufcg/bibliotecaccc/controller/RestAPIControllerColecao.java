@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.ufcg.bibliotecaccc.model.Artefato;
 import br.com.ufcg.bibliotecaccc.model.Autor;
 import br.com.ufcg.bibliotecaccc.model.Colecao;
-import br.com.ufcg.bibliotecaccc.model.ColecaoResumida;
 import br.com.ufcg.bibliotecaccc.service.ColecaoService;
 import br.com.ufcg.bibliotecaccc.service.ColecaoServiceImpl;
 
