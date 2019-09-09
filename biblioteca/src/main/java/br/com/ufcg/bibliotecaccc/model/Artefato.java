@@ -36,12 +36,15 @@ public class Artefato {
 	
 	@Column(name = "data")
 	private String data;
+	
+	@Column(name = "url")
+	private String url;
 
 	public Artefato() {
 		
 	}
 	
-	public Artefato(Set<Autor> autores, String titulo, Set<String> palavrasChaves, String data) {
+	public Artefato(Set<Autor> autores, String titulo, Set<String> palavrasChaves, String data, String url) {
 		this.autores = autores;
 		this.titulo = titulo;
 		this.palavrasChaves = palavrasChaves;
@@ -86,6 +89,14 @@ public class Artefato {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 		
 }
