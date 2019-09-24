@@ -42,7 +42,7 @@ public class RestAPIControllerArtefato {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<?> consultaAtefato(@PathVariable("id") long id) {
+	public ResponseEntity<?> consultaArtefato(@PathVariable("id") long id) {
 		Artefato artefato = this.artefatoService.findById(id);
 		return new ResponseEntity<Artefato>(artefato, HttpStatus.OK);	
 	}

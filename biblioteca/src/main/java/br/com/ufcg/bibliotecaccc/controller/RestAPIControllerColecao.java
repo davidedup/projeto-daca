@@ -60,13 +60,7 @@ public class RestAPIControllerColecao {
 		public ResponseEntity<?> informacoesDeUmaColecao(@PathVariable("id") long id) {
 		int a =  this.colecaoService.totalDeArtefatos(id);
 		return new ResponseEntity<>(a, HttpStatus.OK);	
-		
-//			ColecaoResumida colecao = this.colecaoService.colecaoResumida(id);
-//			
-//			System.out.println(colecao.toString());
-//			
-//			return new ResponseEntity<ColecaoResumida>(colecao, HttpStatus.OK);	
-		}
+	}
 		
 	
 }

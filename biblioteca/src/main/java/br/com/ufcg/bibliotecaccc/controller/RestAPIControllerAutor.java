@@ -16,6 +16,7 @@ import br.com.ufcg.bibliotecaccc.model.Artefato;
 import br.com.ufcg.bibliotecaccc.model.Autor;
 import br.com.ufcg.bibliotecaccc.service.AutorService;
 import br.com.ufcg.bibliotecaccc.service.AutorServiceImpl;
+import br.com.ufcg.bibliotecaccc.util.Token;
 
 @RestController
 @RequestMapping("/autor")
@@ -24,6 +25,11 @@ public class RestAPIControllerAutor {
 	@Autowired
 	private AutorService autorService = new AutorServiceImpl();
 	
+	@RequestMapping(value = "/autenticar", method = RequestMethod.POST)
+	public Token autenticar(@RequestBody Autor Autor) throws Exception 	{
+		Token token = this.autorService.autenticarAutor(Autor);
+		return token;
+	}
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Autor>> listarAutores() {

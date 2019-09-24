@@ -19,6 +19,9 @@ public class Autor {
 	@Column(name = "nome")
 	private String nome;
 	
+	@Column(name = "senha")
+	private String senha;
+	
 	@Column(name = "email")
 	private String email;
 	
@@ -55,4 +58,7 @@ public class Autor {
 		this.email = email;
 	}
 		
+	public String getSenha() {
+		return this.senha;
+	}
 }
