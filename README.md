@@ -13,8 +13,11 @@ A aplicação usa como BD o postgres. É preciso ter o postgres instalado.
 No arquivo application.properties você deve alterar as informações para o seu BD local:
 
 server.port=  <insira o número de sua porta>
+
 pring.datasource.url=jdbc:postgresql://localhost: <insira sua porta/ insira o nome do seu BD>  (separdo por barra)
+
 spring.datasource.username= <insira o o nome do usúario do seu BD>
+
 spring.datasource.password= <insira as senha do seu BD>
 
 Após as configurações rode o comando abaixo na pasta com arquivo pom.xml
