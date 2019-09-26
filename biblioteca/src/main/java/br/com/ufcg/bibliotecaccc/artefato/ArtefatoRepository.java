@@ -1,8 +1,6 @@
-package br.com.ufcg.bibliotecaccc.repositories;
+package br.com.ufcg.bibliotecaccc.artefato;
 
 import org.springframework.data.repository.CrudRepository;
-
-import br.com.ufcg.bibliotecaccc.model.Artefato;
 
 public interface ArtefatoRepository extends CrudRepository<Artefato, Long> {
 

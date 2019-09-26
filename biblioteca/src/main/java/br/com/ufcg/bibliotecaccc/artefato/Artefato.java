@@ -1,4 +1,4 @@
-package br.com.ufcg.bibliotecaccc.model;
+package br.com.ufcg.bibliotecaccc.artefato;
 
 import java.util.Set;
 
@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import br.com.ufcg.bibliotecaccc.autor.Autor;
 
 @Entity
 @Table(name = "tb_artefato")

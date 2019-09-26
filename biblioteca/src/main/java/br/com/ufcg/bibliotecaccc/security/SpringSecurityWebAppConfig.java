@@ -11,7 +11,14 @@ public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 		// AuthenticationTokenFilter will ignore the below paths[
 		web.ignoring().antMatchers(HttpMethod.POST, "/autor");
+		web.ignoring().antMatchers(HttpMethod.GET, "/autor");
 		web.ignoring().antMatchers(HttpMethod.POST, "/autor/autenticar");
 		web.ignoring().antMatchers(HttpMethod.GET, "/autor/nome-autor");
+		web.ignoring().antMatchers(HttpMethod.POST, "/artefato");
+		web.ignoring().antMatchers(HttpMethod.GET, "/artefato");
+		web.ignoring().antMatchers(HttpMethod.POST, "/colecao");
+		web.ignoring().antMatchers(HttpMethod.GET, "/colecao");
+		
+		
 	}
 }

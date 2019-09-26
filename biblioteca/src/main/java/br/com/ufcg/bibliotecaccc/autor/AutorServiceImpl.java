@@ -1,4 +1,4 @@
-package br.com.ufcg.bibliotecaccc.service;
+package br.com.ufcg.bibliotecaccc.autor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.ufcg.bibliotecaccc.model.Autor;
-import br.com.ufcg.bibliotecaccc.repositories.AutorRepository;
 import br.com.ufcg.bibliotecaccc.util.Token;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

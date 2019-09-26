@@ -1,8 +1,6 @@
-package br.com.ufcg.bibliotecaccc.service;
+package br.com.ufcg.bibliotecaccc.artefato;
 
 import java.util.List;
-
-import br.com.ufcg.bibliotecaccc.model.Artefato;
 
 public interface ArtefatoService {
 

@@ -1,11 +1,10 @@
-package br.com.ufcg.bibliotecaccc.service;
+package br.com.ufcg.bibliotecaccc.colecao;
 
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import br.com.ufcg.bibliotecaccc.model.Artefato;
-import br.com.ufcg.bibliotecaccc.model.Colecao;
+import br.com.ufcg.bibliotecaccc.artefato.Artefato;
 
 public interface ColecaoService {
 

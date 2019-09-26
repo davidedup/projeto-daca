@@ -1,4 +1,4 @@
-package br.com.ufcg.bibliotecaccc.service;
+package br.com.ufcg.bibliotecaccc.colecao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.ufcg.bibliotecaccc.model.Artefato;
-import br.com.ufcg.bibliotecaccc.model.Colecao;
-import br.com.ufcg.bibliotecaccc.repositories.ColecaoRepository;
+import br.com.ufcg.bibliotecaccc.artefato.Artefato;
 
 @Service("colecaoService")
 public class ColecaoServiceImpl implements ColecaoService {

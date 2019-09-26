@@ -1,4 +1,4 @@
-package br.com.ufcg.bibliotecaccc.controller;
+package br.com.ufcg.bibliotecaccc.colecao;
 
 import java.util.List;
 
@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.ufcg.bibliotecaccc.model.Artefato;
-import br.com.ufcg.bibliotecaccc.model.Autor;
-import br.com.ufcg.bibliotecaccc.model.Colecao;
-import br.com.ufcg.bibliotecaccc.service.ColecaoService;
-import br.com.ufcg.bibliotecaccc.service.ColecaoServiceImpl;
+import br.com.ufcg.bibliotecaccc.artefato.Artefato;
+import br.com.ufcg.bibliotecaccc.autor.Autor;
 
 @RestController
 @RequestMapping("/colecao")

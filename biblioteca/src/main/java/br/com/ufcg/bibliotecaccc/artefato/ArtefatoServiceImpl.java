@@ -1,13 +1,10 @@
-package br.com.ufcg.bibliotecaccc.service;
+package br.com.ufcg.bibliotecaccc.artefato;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import br.com.ufcg.bibliotecaccc.model.Artefato;
-import br.com.ufcg.bibliotecaccc.repositories.ArtefatoRepository;
 
 @Service("artefatoService")
 public class ArtefatoServiceImpl implements ArtefatoService {

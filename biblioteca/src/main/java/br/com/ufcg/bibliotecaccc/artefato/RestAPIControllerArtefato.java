@@ -1,4 +1,4 @@
-package br.com.ufcg.bibliotecaccc.controller;
+package br.com.ufcg.bibliotecaccc.artefato;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.ufcg.bibliotecaccc.model.Artefato;
-import br.com.ufcg.bibliotecaccc.model.Autor;
-import br.com.ufcg.bibliotecaccc.service.ArtefatoService;
-import br.com.ufcg.bibliotecaccc.service.ArtefatoServiceImpl;
+import br.com.ufcg.bibliotecaccc.autor.Autor;
 
 @RestController
 @RequestMapping("/artefato")

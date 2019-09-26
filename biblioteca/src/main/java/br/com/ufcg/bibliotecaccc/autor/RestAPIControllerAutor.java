@@ -1,4 +1,4 @@
-package br.com.ufcg.bibliotecaccc.controller;
+package br.com.ufcg.bibliotecaccc.autor;
 
 import java.util.List;
 
@@ -13,10 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.ufcg.bibliotecaccc.model.Artefato;
-import br.com.ufcg.bibliotecaccc.model.Autor;
-import br.com.ufcg.bibliotecaccc.service.AutorService;
-import br.com.ufcg.bibliotecaccc.service.AutorServiceImpl;
+import br.com.ufcg.bibliotecaccc.artefato.Artefato;
 import br.com.ufcg.bibliotecaccc.util.Token;
 
 @RestController

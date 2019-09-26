@@ -1,4 +1,4 @@
-package br.com.ufcg.bibliotecaccc.model;
+package br.com.ufcg.bibliotecaccc.autor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
