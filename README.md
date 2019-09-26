@@ -25,3 +25,7 @@ No arquivo application.properties você deve alterar as informações para o seu
 
 Após as configurações rode o comando abaixo na pasta com arquivo pom.xml
 ## mvn spring-boot:run
+
+- Exemplos de requisições usando o postman podem ser encontradas no arquivo 'DACA.postman_collection.json' ou no link https://www.getpostman.com/collections/58e52e960e1488d6ffc2
+
+:)
