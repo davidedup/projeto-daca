@@ -62,7 +62,7 @@ public class AutorServiceImpl implements AutorService{
 	private Token gerarToken(String email) {
         String tokenString = Jwts.builder()
                 .setSubject(email)
-                .claim("login", email)
+                .claim("email", email)
                 .signWith(SignatureAlgorithm.HS512, "samambaia")
                 .compact();
 
@@ -70,5 +70,24 @@ public class AutorServiceImpl implements AutorService{
 
         return token;
     }
+
+	@Override
+	public String getNomeAutor(String autorizacao) {
+		Autor autor = this.getAutor(autorizacao);
+		String nomeAdmin = autor.getNome();
+		return nomeAdmin;
+	}
+	
+	public Autor getAutor(String autorizacao) {
+        String email = getEmail(autorizacao);
+        Autor autor = autorRepository.getAutorByEmail(email);
+        return autor;
+    }
+	
+	public String getEmail(String autorizacao) {
+        String login = (String) Jwts.parser().setSigningKey("samambaia").parseClaimsJws(autorizacao).getBody().get("email");
+        return login;
+    }
+	
 
 }
