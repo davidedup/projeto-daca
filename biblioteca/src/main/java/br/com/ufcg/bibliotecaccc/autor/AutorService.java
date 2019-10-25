@@ -11,8 +11,8 @@ public interface AutorService {
 
 	public Autor findById(long id);
 
-	public Token autenticarAutor(Autor autor) throws Exception;
-
 	public String getNomeAutor(String autorizacao);
+
+	public void delete(Long id);
 	
 }
