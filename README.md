@@ -25,7 +25,7 @@ A aplicação está estruturada da seguinte maneira: existem classes modelo, con
 
 Abaixo temos um diagrama simplificado da arquitetura: 
 
-![Diagrama Arquitetura](https://drive.google.com/file/d/1Q7giEbDWiEQA6XS-agSla_MMpH1__V6f/view?usp=sharing)
+![Diagrama Arquitetura](https://drive.google.com/open?id=1Q7giEbDWiEQA6XS-agSla_MMpH1__V6f)
 
 #### Uma requisição:
 Você pode fazer uma requisição que liste todos os autores cadastrados usando uma chamado do tipo POST através da URL: ```localhost:8080/autor```. O controller de autor irá interceptar a chamada http e irá chamar o service de autor, o service de autor irá se comunicar com o repository de autor que irá recuperar a informação do BD. 
@@ -50,3 +50,9 @@ spring.datasource.username= <insira o nome do usuário do seu BD>
 spring.datasource.password= <insira as senha do seu BD>
 ```
 *Você pode comentar todo o arquivo application.properties e usar o BD em memória H2. 
+
+## Cache
+
+Foi utilizado o serviço de cache na aplicação para melhorar o desempenho da aplicação. O Redis foi a tecnologia de cache utilizada. Você precisa estar com o redis rodando em suas maquina para o serviço de cache funcionar. Mais informações [aqui](https://redis.io/topics/quickstart).
+
+A rota que faz a utilização de cache é do tipo GET feita para listagem dos autores cadastrados ```localhost:8080/autor/cache```.
