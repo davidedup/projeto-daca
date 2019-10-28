@@ -56,3 +56,7 @@ spring.datasource.password= <insira as senha do seu BD>
 Foi utilizado o serviço de cache na aplicação para melhorar o desempenho da aplicação. O Redis foi a tecnologia de cache utilizada. Você precisa estar com o redis rodando em suas maquina para o serviço de cache funcionar. Mais informações [aqui](https://redis.io/topics/quickstart).
 
 A rota que faz a utilização de cache é do tipo GET feita para listagem dos autores cadastrados ```localhost:8080/autor/cache```.
+
+## Jmeter
+
+Para análisar o desempenho da aplicação foi utilizado o JMeter. Veja o relatório completo de desempenho no [doc](https://docs.google.com/document/d/14O6Wweh26GV3MgUefw6XV7p7ZaXKCvSXLknWytNQ-UE/edit?usp=sharing).
