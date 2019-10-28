@@ -28,7 +28,7 @@ Abaixo temos um diagrama simplificado da arquitetura:
 ![Diagrama Arquitetura](https://drive.google.com/open?id=1Q7giEbDWiEQA6XS-agSla_MMpH1__V6f)
 
 #### Uma requisição:
-Você pode fazer uma requisição que liste todos os autores cadastrados usando uma chamado do tipo POST através da URL: ```localhost:8080/autor```. O controller de autor irá interceptar a chamada http e irá chamar o service de autor, o service de autor irá se comunicar com o repository de autor que irá recuperar a informação do BD. 
+Você pode fazer uma requisição que liste todos os autores cadastrados usando uma chamado do tipo GET através da URL: ```localhost:8080/autor```. O controller de autor irá interceptar a chamada http e irá chamar o service de autor, o service de autor irá se comunicar com o repository de autor que irá recuperar a informação do BD. 
 
 Para mais exemplos de chamadas você pode acessar o arquivo: [DACA.postman_collection.json](https://www.getpostman.com/collections/58e52e960e1488d6ffc2) 
 
