@@ -26,13 +26,11 @@ import io.jsonwebtoken.SignatureAlgorithm;
 @Component
 public class JwtTokenProvider {
 	
-	@Value("${security.jwt.token.secret-key}")
-	private String secretKey;
 	
-	@Value("${security.jwt.token.expire-length}")
-	private long validityInMilliseconds;
+	private String secretKey =  "samambaia";
 	
-	@Autowired
+	private long validityInMilliseconds = 30000;
+	
 	private UserDetailsService userDetailsService;
 	
 	@PostConstruct
@@ -40,9 +38,8 @@ public class JwtTokenProvider {
 		secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
 	}
 	
-	public String createToken(String email, List<Authority> roles) {
+	public String createToken(String email) {
 		Claims claims = Jwts.claims().setSubject(email);
-		claims.put(AuthenticationConfig.ROLES.toString(), roles);
 		
 		Date now = new Date();
 		Date validity = new Date(now.getTime() + validityInMilliseconds);

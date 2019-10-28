@@ -1,15 +1,15 @@
 package br.com.ufcg.edu.autenticacao;
 
-import org.jvnet.hk2.annotations.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.stereotype.Service;
 import org.json.JSONObject;
 
 import br.com.ufcg.bibliotecaccc.autor.Autor;
 
-@Service
+@Service("autenticacaoService")
 public class AutenticacaoService {
 
 	@Autowired

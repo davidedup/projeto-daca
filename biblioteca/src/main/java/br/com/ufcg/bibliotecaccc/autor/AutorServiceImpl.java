@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import br.com.ufcg.edu.autenticacao.JwtTokenProvider;
@@ -18,6 +20,13 @@ public class AutorServiceImpl implements AutorService {
 	
 	@Override
 	public List<Autor> findAllAutores() {
+		
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		Iterable<Autor> autores = this.autorRepository.findAll();
 		List<Autor> autoresList = toList(autores);
 		
@@ -35,6 +44,7 @@ public class AutorServiceImpl implements AutorService {
 		return list;
 	}
 
+	@CacheEvict(cacheNames = "Autor", allEntries = true)
 	@Override
 	public Autor cadastraAutor(Autor autor) {
 		return this.autorRepository.save(autor);
@@ -58,9 +68,25 @@ public class AutorServiceImpl implements AutorService {
         return autor;
     }
 	
+	@CacheEvict(cacheNames = "Autor", allEntries = true)
 	@Override
 	public void delete(Long id) {
 		this.autorRepository.deleteById(id);	
+	}
+	
+	@Cacheable(cacheNames = "Autor", key="#root.method.name")
+	@Override
+	public List<Autor> findAllAutores2() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		Iterable<Autor> autores = this.autorRepository.findAll();
+		List<Autor> autoresList = toList(autores);
+		
+		return autoresList;
 	}
 
 }

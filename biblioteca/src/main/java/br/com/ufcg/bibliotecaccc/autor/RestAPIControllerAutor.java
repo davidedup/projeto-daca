@@ -3,6 +3,7 @@ package br.com.ufcg.bibliotecaccc.autor;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +31,12 @@ public class RestAPIControllerAutor {
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Autor>> listarAutores() {
 		List<Autor> autores = autorService.findAllAutores();	
+		return new ResponseEntity<List<Autor>>(autores, HttpStatus.OK);
+	}	
+	
+	@RequestMapping(value = "/cache", method = RequestMethod.GET)
+	public ResponseEntity<List<Autor>> listarAutores2() {
+		List<Autor> autores = autorService.findAllAutores2();	
 		return new ResponseEntity<List<Autor>>(autores, HttpStatus.OK);
 	}	
 	
