@@ -60,3 +60,6 @@ A rota que faz a utilização de cache é do tipo GET feita para listagem dos au
 ## Jmeter
 
 Para análisar o desempenho da aplicação foi utilizado o JMeter. Veja o relatório completo de desempenho no [doc](https://docs.google.com/document/d/14O6Wweh26GV3MgUefw6XV7p7ZaXKCvSXLknWytNQ-UE/edit?usp=sharing).
+
+## License
+Este projeto está licenciado sob a licença MIT.
