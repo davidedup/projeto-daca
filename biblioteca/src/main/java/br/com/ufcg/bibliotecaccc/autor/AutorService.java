@@ -11,8 +11,6 @@ public interface AutorService {
 
 	public Autor findById(long id);
 
-	public String getNomeAutor(String autorizacao);
-
 	public void delete(Long id);
 
 	public List<Autor> findAllAutores2();

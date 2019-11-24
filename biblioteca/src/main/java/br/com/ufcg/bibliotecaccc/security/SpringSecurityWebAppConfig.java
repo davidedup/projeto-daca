@@ -12,25 +12,16 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import br.com.ufcg.edu.autenticacao.JWTAuthenticationFilter;
+import br.com.ufcg.edu.autenticacao.JWTLoginFilter;
 
 
 @EnableWebSecurity
 @Configuration  
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {    
-	
-	@Override
-	public void configure(WebSecurity web) throws Exception {
-		// AuthenticationTokenFilter will ignore the below paths[
-		web.ignoring().antMatchers(HttpMethod.POST, "/autor");
-//		web.ignoring().antMatchers(HttpMethod.GET, "/autor");
-		//web.ignoring().antMatchers(HttpMethod.POST, "/autenticacao");
-//		web.ignoring().antMatchers(HttpMethod.GET, "/autor/nome-autor");
-//		web.ignoring().antMatchers(HttpMethod.POST, "/artefato");
-//		web.ignoring().antMatchers(HttpMethod.GET, "/artefato");
-//		web.ignoring().antMatchers(HttpMethod.POST, "/colecao");
-//		web.ignoring().antMatchers(HttpMethod.GET, "/colecao");
-	}
 	
 	@Bean
 	@Override
@@ -39,11 +30,19 @@ public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	@Override
-	public void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable();
+	public void configure(HttpSecurity httpSecurity) throws Exception {
+		httpSecurity.csrf().disable().authorizeRequests()
+		.antMatchers(HttpMethod.POST, "/login").permitAll()
+		.anyRequest().authenticated()
+		.and()
 		
+		// filtra requisições de login
+		.addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
+                UsernamePasswordAuthenticationFilter.class)
 		
-		http.httpBasic();
+		// filtra outras requisições para verificar a presença do JWT no header
+		.addFilterBefore(new JWTAuthenticationFilter(),
+                UsernamePasswordAuthenticationFilter.class);
 	}
 	
 	@Autowired
@@ -51,5 +50,6 @@ public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
 		auth.inMemoryAuthentication()
 			.withUser("admin").password("{noop}samambaia").roles("ADMIN");
 	}
+
 	
 }

@@ -22,11 +22,6 @@ public class RestAPIControllerAutor {
 	
 	@Autowired
 	private AutorService autorService = new AutorServiceImpl();
-	
-	@RequestMapping(value = "/nome-autor", method = RequestMethod.GET)
-	public String getNomeAutor(@RequestHeader("Authorization") String autorizacao) {
-		return this.autorService.getNomeAutor(autorizacao);
-	}
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Autor>> listarAutores() {

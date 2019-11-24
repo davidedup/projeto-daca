@@ -8,12 +8,10 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import br.com.ufcg.edu.autenticacao.JwtTokenProvider;
 
 @Service("autorService")
 public class AutorServiceImpl implements AutorService {
 
-	private JwtTokenProvider jwtTokenProvider;
 	
 	@Autowired
 	private AutorRepository autorRepository;
@@ -54,20 +52,8 @@ public class AutorServiceImpl implements AutorService {
 	public Autor findById(long id) {
 		return this.autorRepository.getAutorById(id);
 	}
+	
 
-	@Override
-	public String getNomeAutor(String autorizacao) {
-		Autor autor = this.getAutor(autorizacao);
-		String nomeAdmin = autor.getNome();
-		return nomeAdmin;
-	}
-	
-	public Autor getAutor(String autorizacao) {
-        String email = this.jwtTokenProvider.getEmail(autorizacao);
-        Autor autor = autorRepository.getAutorByEmail(email);
-        return autor;
-    }
-	
 	@CacheEvict(cacheNames = "Autor", allEntries = true)
 	@Override
 	public void delete(Long id) {
