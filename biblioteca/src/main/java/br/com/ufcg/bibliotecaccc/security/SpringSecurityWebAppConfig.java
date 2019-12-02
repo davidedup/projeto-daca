@@ -33,7 +33,7 @@ public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
 	public void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.csrf().disable().authorizeRequests()
 		.antMatchers(HttpMethod.POST, "/login").permitAll()
-		.anyRequest().authenticated()
+		.antMatchers(HttpMethod.POST, "/kafka/publish").permitAll()
 		.and()
 		
 		// filtra requisições de login
