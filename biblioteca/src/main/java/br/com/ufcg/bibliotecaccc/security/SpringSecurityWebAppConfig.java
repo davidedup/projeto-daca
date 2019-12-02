@@ -14,8 +14,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import br.com.ufcg.edu.autenticacao.JWTAuthenticationFilter;
-import br.com.ufcg.edu.autenticacao.JWTLoginFilter;
+import br.com.ufcg.bibliotecaccc.autenticacao.JWTAuthenticationFilter;
+import br.com.ufcg.bibliotecaccc.autenticacao.JWTLoginFilter;
 
 
 @EnableWebSecurity

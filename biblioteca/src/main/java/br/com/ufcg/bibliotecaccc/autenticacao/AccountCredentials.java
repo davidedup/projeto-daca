@@ -1,4 +1,4 @@
-package br.com.ufcg.edu.autenticacao;
+package br.com.ufcg.bibliotecaccc.autenticacao;
 
 public class AccountCredentials {
 	
