@@ -25,7 +25,7 @@ A aplicação está estruturada da seguinte maneira: existem classes modelo, con
 
 Abaixo temos um diagrama simplificado da arquitetura: 
 
-![Diagrama Arquitetura](https://drive.google.com/open?id=1Q7giEbDWiEQA6XS-agSla_MMpH1__V6f)
+![Diagrama Arquitetura](https://drive.google.com/a/ccc.ufcg.edu.br/file/d/1Q7giEbDWiEQA6XS-agSla_MMpH1__V6f/view?usp=drivesdk)
 
 #### Uma requisição:
 Você pode fazer uma requisição que liste todos os autores cadastrados usando uma chamado do tipo GET através da URL: ```localhost:8080/autor```. O controller de autor irá interceptar a chamada http e irá chamar o service de autor, o service de autor irá se comunicar com o repository de autor que irá recuperar a informação do BD. 
