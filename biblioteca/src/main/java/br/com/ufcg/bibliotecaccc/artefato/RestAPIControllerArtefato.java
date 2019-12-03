@@ -34,16 +34,13 @@ public class RestAPIControllerArtefato {
 		return new ResponseEntity<List<Artefato>>(artefatos, HttpStatus.OK);
 	}
 
-	@RequestMapping(method = RequestMethod.POST
-//			consumes = { MediaType.APPLICATION_JSON_VALUE }, produces = {
-//			MediaType.APPLICATION_JSON_VALUE }
-	)
-	public ResponseEntity<?> casdastraArtefato() {
-		// artefato = this.artefatoService.cadastraArtefato(artefato);
-
-		this.producer.sendMessage("OLAA");
-		
-		return new ResponseEntity<String>("", HttpStatus.CREATED);
+	@RequestMapping(method = RequestMethod.POST,
+	consumes= { MediaType.APPLICATION_JSON_VALUE },produces={
+			MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<?> casdastraArtefato(@RequestBody Artefato artefato) {
+		artefato = this.artefatoService.cadastraArtefato(artefato);
+		this.producer.sendMessage("Um novo artefato foi cadastrado, Título: " + artefato.getTitulo() +  ". Os autores são: " + artefato.getAutores().toString());
+		return new ResponseEntity<Artefato>(artefato, HttpStatus.CREATED);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)

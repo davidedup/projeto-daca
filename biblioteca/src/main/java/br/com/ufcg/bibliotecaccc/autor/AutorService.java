@@ -14,5 +14,7 @@ public interface AutorService {
 	public void delete(Long id);
 
 	public List<Autor> findAllAutores2();
+
+	public void notificaNovoArtefato(String message);
 	
 }
