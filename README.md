@@ -61,5 +61,10 @@ A rota que faz a utilização de cache é do tipo GET feita para listagem dos au
 
 Para análisar o desempenho da aplicação foi utilizado o JMeter. Veja o relatório completo de desempenho no [doc](https://docs.google.com/document/d/14O6Wweh26GV3MgUefw6XV7p7ZaXKCvSXLknWytNQ-UE/edit?usp=sharing).
 
+## Kafka
+
+o kafka está configurado para quando o usuário fazer a publicação de um novo artefato todos os usuários sejam notificados sobre a nova publicação.
+Antes de usar é necessario deixar disponível o servidor do kafka. Instruções aqui https://kafka.apache.org/downloads
+
 ## License
 Este projeto está licenciado sob a licença MIT.
